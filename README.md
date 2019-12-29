@@ -3,9 +3,11 @@ Joomla plugin translating remote linked markdown files to html
 
 * Actual basic working example, 
 
-Examples:
-{:9999,thumb,true,left;float:left, left} 
+Usage:
+* Activate plugin 
+* Add following to an article "{remotemarkdown:<file-url>}
 
+Example:
 ```
 {remotemarkdown:http://127.0.0.1/readme.md}
 ```
