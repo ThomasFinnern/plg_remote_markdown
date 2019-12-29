@@ -1,7 +1,7 @@
 # plg_remote_markdown
 Joomla plugin translating remote linked markdown files to html
 
-* Actual basic working example, 
+**Basic working example** No fringes
 
 Usage:
 * Activate plugin 
