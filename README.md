@@ -6,10 +6,9 @@ Joomla plugin translating remote linked markdown files to html
 Examples:
 {:9999,thumb,true,left;float:left, left} 
 
-'''
+```
 {remotemarkdown:http://127.0.0.1/readme.md}
-
-'''
+```
 
 following url/file can't be displayed proper
 https://raw.githubusercontent.com/RSGallery2/RSGallery2_Project/master/Documentation/RSGallery2_documentation_J3.x.md
