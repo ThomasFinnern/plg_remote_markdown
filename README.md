@@ -15,6 +15,7 @@ Usage:
 Examples:
 ```
 {remotemarkdown:http://127.0.0.1/readme.md}
+{remotemarkdown:https://raw.githubusercontent.com/RSGallery2/RSGallery2_Project/master/Documentation/Maintenance/Maint.SlideshowConfig.md}
 ```
 
 Following url/file can't be displayed proper
