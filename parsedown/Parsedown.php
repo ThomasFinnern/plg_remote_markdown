@@ -13,11 +13,11 @@
 #
 #
 
-namespace Joomla\Plugin\content\remote_markdown\parsedown;
+namespace Joomla\Plugin\Content\Remote_markdown\Parsedown;
 
 // \defined('_JEXEC') or die;
 
-class ParsedownXXX
+class Parsedown
 {
     # ~
 

@@ -176,7 +176,7 @@ class PlgContentRemote_markdown extends CMSPlugin
 
 //			return '<div style="color:darkblue;"> <strong>remotemarkdown found </strong></div>';
 
-			$parseDown = new parsedown();
+			$parseDown = new Parsedown();
 
 			//$parseDown->setBreaksEnabled(true); # enables automatic line breaks
 			//$parseDown->setMarkupEscaped(true); # escapes markup (HTML)
