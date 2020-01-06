@@ -4,7 +4,7 @@
 
  */
 
-// namespace Joomla\Plugin\Content;
+// namespace Joomla\Plugin\Content\Remote_markdown;
 
 // No direct access
 defined( '_JEXEC' ) or die('');
@@ -13,8 +13,9 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Language\Factory;
 use Joomla\CMS\Plugin\CMSPlugin;
 
-//use Joomla\Plugin\Content\Remote_markdown\Parsedown\Parsedown;
 use Joomla\Plugin\Content\Remote_markdown\Parsedown\Parsedown;
+//use Joomla\Plugins\Content\Remote_markdown\Parsedown\Parsedown;
+//use Joomla\CMS\Plugin\Content\Remote_markdown\Parsedown\Parsedown;
 
 
 class PlgContentRemote_markdown extends CMSPlugin
