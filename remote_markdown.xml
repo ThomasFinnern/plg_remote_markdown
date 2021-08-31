@@ -16,10 +16,6 @@
 		<folder>Parsedown</folder> 
 		<folder>language</folder> 
 	</files>
-	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.remote_markdown.ini</language>
-		<language tag="en-GB">en-GB/en-GB.remote_markdown.sys.ini</language>
-	</languages>
 	<config>
 		<fields name="params">
 			<fieldset name="basic"></fieldset>
