@@ -13,7 +13,7 @@
 		<filename plugin="remote_markdown">remote_markdown.php</filename>
 		<filename>index.html</filename>
 		<filename>LICENSE</filename>
-		<folder>Parsedown</folder> 
+		<folder>parsedown</folder> 
 		<folder>language</folder> 
 	</files>
 	<config>
