@@ -157,8 +157,11 @@ class PlgContentRemote_markdown extends CMSPlugin
 				}
 			}
 
-			$outTxt .= '<br>$link: "' . $link . '"';
+			// ToDo: show link as option
+			// $outTxt .= '<br>$link: "' . $link . '"';
 
+			// ToDo: show user parameter as option
+			// ToDo: Tell user parameter
 			foreach ($userParams as $key => $value)
 			{
 				$outTxt .= '<br>...$userParameter: "' . $key . '": ' . $value . '"';
@@ -182,7 +185,7 @@ class PlgContentRemote_markdown extends CMSPlugin
 			//$parseDown->setMarkupEscaped(true); # escapes markup (HTML)
 			//$parseDown->setUrlsLinked(true); # prevents automatic linking of URLs
 
-			$outTxt .= '<br>' . '-------------------' . '<br>';
+			// $outTxt .= '<br>' . '-------------------' . '<br>';
 
 			//$html = $parseDown->text('**Hello _Parsedown**');
 			$html = $parseDown->text($mdText);
