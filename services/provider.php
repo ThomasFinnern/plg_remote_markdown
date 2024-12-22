@@ -29,6 +29,7 @@ use Finnern\Plugin\Content\Remote_markdown\Extension\Remote_markdown;
                         (array) PluginHelper::getPlugin('content', 'remote_markdown')
                     );
                     $plugin->setApplication(Factory::getApplication());
+
                     return $plugin;
                 }
             );

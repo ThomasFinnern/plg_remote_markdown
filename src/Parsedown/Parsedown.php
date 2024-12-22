@@ -13,7 +13,7 @@
 #
 #
 
-namespace Joomla\Plugin\Content\Remote_markdown\Parsedown;
+namespace Finnern\Plugin\Content\Remote_markdown\Parsedown;
 
 // \defined('_JEXEC') or die;
 

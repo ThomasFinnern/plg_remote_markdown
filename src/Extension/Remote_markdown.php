@@ -2,7 +2,7 @@
 
 namespace Finnern\Plugin\Content\Remote_markdown\Extension;
 
-use Finnern\Plugin\Content\Remote_markdown\Extension\Parsedown\Parsedown;
+use Finnern\Plugin\Content\Remote_markdown\Parsedown\Parsedown;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Event\Event;
 use Joomla\Event\SubscriberInterface;
