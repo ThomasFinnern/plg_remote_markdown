@@ -34,4 +34,4 @@ https://raw.githubusercontent.com/RSGallery2/RSGallery2_Project/master/Documenta
 ## Possible Future features:
 * Caching of read files
 * Parameters also in article reference
-
+* User parameter prepared for extraction but not for use
