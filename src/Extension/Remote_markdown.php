@@ -66,12 +66,9 @@ class Remote_markdown extends CMSPlugin implements SubscriberInterface
         }
 
         $text = $article->text; // text of the article
-        //$config = Factory::getApplication()->getConfig()->toArray();  // config params as an array
-        // (we can't do a foreach over the config params as a Registry because they're protected)
 
-        // the following is just code to replace {configname} with the parameter value
-        $offset = 0;
         // find opening curly brackets ...
+        $offset = 0;
         while (($start = strpos($text, "{", $offset)) !== false) {
 
             // find the corresponding closing bracket and extract the "userText"
@@ -79,16 +76,9 @@ class Remote_markdown extends CMSPlugin implements SubscriberInterface
 
                 $userText = substr($text, $start+1, $end - $start - 1);
 
-                // $match_found = false;
-
                 //--- Matches marker ----------------------------
 
-                if (str_starts_with($userText, self::MARKER)) {
-
-                    // $match_found = true;
-
-                    //--- test replacement to tell it is found ----------------------
-                    // $replacement = substr_replace($text, '<b>remotemarkdown found<b>', $start, $end - $start + 1);;
+                if (str_starts_with(strtolower($userText), self::MARKER)) {
 
                     //--- Extract url and parameter) ----------------------
 
@@ -101,12 +91,12 @@ class Remote_markdown extends CMSPlugin implements SubscriberInterface
 
                     //--- convert to html ----------------------
 
-                    // ?? parameter ?
+                    // ? prepared $userParams ?
 
-                    // $parseDown = new parsedown(true);
+                    // ToDo: test $parseDown = new parsedown(true);
                     $parseDown = new parsedown();
 
-                    //$html = $parseDown->text('**Hello _Parsedown**');
+                    //Test output: $html = $parseDown->text('**Hello _Parsedown_**');
                     $html = $parseDown->text($mdText);
 
                     //--- insert replacement -----------------------------------------------
