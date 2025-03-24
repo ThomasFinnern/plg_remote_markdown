@@ -1,0 +1,10 @@
+task:buildExtension
+/type=module
+   //srcRoot="../../remoteMarkdown"
+/srcRoot="../../remoteMarkdown"
+   // /isNoRecursion=true
+/buildDir="../../remoteMarkdown/.packages"
+/name=plg_content_remotemarkdown
+/extension=remoteMarkdown
+   //    each creation of package will increase the build number
+/isIncreaseBuild=true
