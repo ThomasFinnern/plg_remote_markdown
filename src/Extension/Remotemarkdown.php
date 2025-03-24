@@ -1,8 +1,17 @@
 <?php
+/**
+ * @package     Joomla.Plugin
+ * @subpackage  Content.remotemarkdown
+ * @author          Thomas Finnern <InsideTheMachine.de>
+ * @copyright  (c)  2022-2025 Thomas Finnern
+ * @license         GNU General Public License version 2 or later; see LICENSE.txt
+ */
 
-namespace Finnern\Plugin\Content\Remote_markdown\Extension;
+\defined('_JEXEC') or die;
 
-use Finnern\Plugin\Content\Remote_markdown\Parsedown\Parsedown;
+namespace Finnern\Plugin\Content\RemoteMarkdown\Extension;
+
+use Finnern\Plugin\Content\Remotemarkdown\Parsedown\Parsedown;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Event\Event;
 use Joomla\Event\SubscriberInterface;
@@ -10,7 +19,7 @@ use Joomla\Event\SubscriberInterface;
 // no direct access
 defined('_JEXEC') or die;
 
-class Remote_markdown extends CMSPlugin implements SubscriberInterface
+class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
 {
     protected const MARKER = 'remotemarkdown:';
 

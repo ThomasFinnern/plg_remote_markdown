@@ -1,7 +1,8 @@
-# plg_remote_markdown
+# Plugin remote markdown 
+plg_content_remotemarkdown
 
-Joomla plugin displaying remote linked markdown files in article
-This Joomla! plugin will replace a given link to a *.md in the 
+Joomla plugin displaying remote markdown files linked in an article. 
+This Joomla! plugin will replace a given link to a *.md file in the 
 form <strong>{remotemarkdown:http://.../...md}</strong> to an 
 html out put in an article.
 
@@ -12,11 +13,11 @@ to convert the *.md file (LICENSE file see folder)
 
 **State: Basic working example** (No fringes)
 
-
 ## Usage:
+
 * Install plugin 
 * Activate plugin 
-* Add following to an article "{remotemarkdown:\<http: file-url\>}
+* Add following text to an article "{remotemarkdown:\<http: file-url\>}
 
 ## Examples:
 ```
@@ -25,9 +26,8 @@ to convert the *.md file (LICENSE file see folder)
 ```
 ## Attention: 
 
-It won't display github flavoured markdown.
-
-Following url/file can't be displayed proper
+* It won't display github flavoured markdown.
+* Following url/file can't be displayed proper
 
 https://raw.githubusercontent.com/RSGallery2/RSGallery2_Project/master/Documentation/RSGallery2_documentation_J3.x.md
 

@@ -13,7 +13,7 @@
 #
 #
 
-namespace Finnern\Plugin\Content\Remote_markdown\Parsedown;
+namespace Finnern\Plugin\Content\RemoteMarkdown\Parsedown;
 
 // \defined('_JEXEC') or die;
 
