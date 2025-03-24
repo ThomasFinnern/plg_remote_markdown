@@ -1,0 +1,12 @@
+
+
+ToDo: Update Server 
+ToDo: language local folder
+ToDo: Install script with message to activate the pluging
+
+Test scenarios -> create articles with API .... 
+  * {remotemarkdown containing remote markdown in URL
+  * {remotemarkdown containing remote markdown but no end '}' marker
+  * Two different [xyz and  {remotemarkdown 
+  * {remotemarkdown following {remotemarkdown with no spaces 
+  

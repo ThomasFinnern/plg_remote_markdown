@@ -22,7 +22,7 @@ to convert the *.md file (LICENSE file see folder)
 ## Examples:
 ```
 {remotemarkdown:http://127.0.0.1/readme.md}
-{remotemarkdown:https://raw.githubusercontent.com/RSGallery2/RSGallery2_Project/master/Documentation/Maintenance/Maint.SlideshowConfig.md}
+{remotemarkdown:https://github.com/ThomasFinnern/plg_remote_markdown/raw/refs/heads/master/README.md}
 ```
 ## Attention: 
 

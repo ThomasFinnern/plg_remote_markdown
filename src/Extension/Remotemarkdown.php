@@ -7,11 +7,9 @@
  * @license         GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-\defined('_JEXEC') or die;
-
 namespace Finnern\Plugin\Content\RemoteMarkdown\Extension;
 
-use Finnern\Plugin\Content\Remotemarkdown\Parsedown\Parsedown;
+use Finnern\Plugin\Content\RemoteMarkdown\Parsedown\Parsedown;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Event\Event;
 use Joomla\Event\SubscriberInterface;
@@ -80,6 +78,8 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
         $offset = 0;
         while (($start = strpos($text, "{", $offset)) !== false) {
 
+			$offset = $start + 1;
+
             // find the corresponding closing bracket and extract the "userText"
             if ($end = strpos($text, "}", $start)) {
 
@@ -94,36 +94,61 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
                     $userData = substr ($userText, strlen (self::MARKER));
                     [$fileUrl, $userParams] = $this->extractUrlAndParameter ($userData);
 
+					// Remove all illegal characters from a url
+	                $urlSanitize = filter_var($fileUrl, FILTER_SANITIZE_URL);
+
+
                     //--- Remote file  --------------------------------------------
 
-                    $mdText = file_get_contents($fileUrl);
+	                // Validate url
+	                if (filter_var($urlSanitize, FILTER_VALIDATE_URL))
+	                {
+		                $mdText = file_get_contents($urlSanitize);
+	                } else {
+						$mdText = '';
+	                }
 
                     //--- convert to html ----------------------
 
-                    // ? prepared $userParams ?
+	                if ( ! empty ($mdText))
+	                {
+		                // ? prepared $userParams ?
 
-                    // ToDo: test $parseDown = new parsedown(true);
-                    $parseDown = new parsedown();
+		                // ToDo: test $parseDown = new parsedown(true);
+		                $parseDown = new parsedown();
 
-                    //Test output: $html = $parseDown->text('**Hello _Parsedown_**');
-                    $html = $parseDown->text($mdText);
+		                //Test output: $html = $parseDown->text('**Hello _Parsedown_**');
+		                $html = $parseDown->text($mdText);
+	                } else {
+
+		                $html = '';
+	                }
 
                     //--- insert replacement -----------------------------------------------
 
-                    if (strlen($html) > 0) {
-
-                        // $text = substr_replace($text, htmlspecialchars($html), $start, $end - $start + 1);
-                    } else {
-
-                        $html = '{start of remotemarkdown found but file: "' . $fileUrl . '" or data not found }';
+                    if (empty ($html))
+					{
+						$html = '{start of remotemarkdown found but file: "' . $fileUrl . '" or data not found. '
+							. '\n Sanitized URL: "' . $urlSanitize . '" }';
                     }
+//					else
+//					{
+//	                    // $text = substr_replace($text, htmlspecialchars($html), $start, $end - $start + 1);
+//                  }
+
                     $text = substr_replace($text, $html, $start, $end - $start + 1);
 
                     $offset = $start + strlen($html);
+
+					// $test = substr($text, $offset);
                 }
             }
 
-            $offset = $end;
+// does jump to unintended { xyz... } brackets
+//			if ($offset < $end)
+//			{
+//				$offset = $end;
+//			}
         }
 
 /**

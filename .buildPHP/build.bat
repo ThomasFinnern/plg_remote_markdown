@@ -26,8 +26,8 @@ pushd  ..\..\buildExtension\src
 REM dir /one /b *.tsk
 ECHO Path: %cd% 
 
-echo --- "%ExePath%php.exe" buildExtensionCmd.php -f ../../remoteMarkdown/.buildPHP/build_step.tsk %1
-"%ExePath%php.exe" buildExtensionCmd.php -f ../../remoteMarkdown/.buildPHP/build_step.tsk %1
+echo --- "%ExePath%php.exe" buildExtensionCmd.php -f ../../remoteMarkdown/.buildPHP/build.tsk %1
+"%ExePath%php.exe" buildExtensionCmd.php -f ../../remoteMarkdown/.buildPHP/build.tsk %1
 popd
 
 GOTO :EOF

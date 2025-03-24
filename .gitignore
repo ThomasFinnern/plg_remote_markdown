@@ -1,9 +1,10 @@
 
 
-//.build/
-.build/*.log
-.build/*.*.log
-.build/Translations/.idea/
+//.buildPHP/
+.buildPHP/*.log
+.buildPHP/*.*.log
+.buildPHP/Translations/.idea/
 
 .packages/
+.packages_zip/
 
