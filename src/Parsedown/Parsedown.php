@@ -1,17 +1,25 @@
 <?php
+/**
+ * @package     Joomla.Plugin
+ * @subpackage  Content.remotemarkdown
+ * @author          Thomas Finnern <InsideTheMachine.de>
+ * @copyright  (c)  2022-2025 Thomas Finnern
+ * @license         GNU General Public License version 2 or later; see LICENSE.txt
+ */
 
-#
-#
-# Parsedown
-# http://parsedown.org
-#
-# (c) Emanuil Rusev
-# http://erusev.com
-#
-# For the full license information, view the LICENSE file that was distributed
-# with this source code.
-#
-#
+/*
+Parsedown is included from Parsedown project 
+
+-----------------------------
+http://parsedown.org
+
+ (c) Emanuil Rusev
+ http://erusev.com
+
+ For the full license information, view the LICENSE file that was distributed
+ with this source code.
+-----------------------------
+*/
 
 namespace Finnern\Plugin\Content\RemoteMarkdown\Parsedown;
 

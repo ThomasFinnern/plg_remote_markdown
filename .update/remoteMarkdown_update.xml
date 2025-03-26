@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+	<update>
+		<name>RemoteMarkdown content plugin</name>
+		<description>Joomla plugin translating a remote linked *.md file to html and displays it in an article</description>
+		<element>com_lang4dev</element>
+		<type>component</type>
+		<version>0.2.0.0</version>
+		<changelogurl>https://raw.githubusercontent.com/ThomasFinnern/plg_remote_markdown/refs/heads/master/changelog.xml</changelogurl>
+		<infourl title="RemoteMarkdown content plugin releases on github">https://github.com/ThomasFinnern/plg_remote_markdown/releases</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/ThomasFinnern/plg_remote_markdown/archive/refs/tags/v0.2.0.0.zip</downloadurl>
+		</downloads>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer>Thomas Finnnern</maintainer>
+		<maintainerurl>https://github.com/ThomasFinnern</maintainerurl>
+		<targetplatform name="joomla" version="5.*"/>
+		<client>administrator</client>
+	</update>
+	<update>
+		<name>RemoteMarkdown content plugin</name>
+		<description>Joomla plugin translating a remote linked *.md file to html and displays it in an article</description>
+		<element>com_lang4dev</element>
+		<type>plugin</type>
+		<version>0.1.6.6</version>
+		<changelogurl>https://raw.githubusercontent.com/ThomasFinnern/plg_remote_markdown/refs/heads/master/changelog.xml</changelogurl>
+		<infourl title="RemoteMarkdown content plugin releases on github">https://github.com/ThomasFinnern/plg_remote_markdown/releases</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/ThomasFinnern/plg_remote_markdown/archive/refs/tags/v0.1.4.zip</downloadurl>
+		</downloads>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer>Thomas Finnnern</maintainer>
+		<maintainerurl>https://github.com/ThomasFinnern</maintainerurl>
+		<targetplatform name="joomla" version="4.*"/>
+		<client>administrator</client>
+	</update>
+</updates>
