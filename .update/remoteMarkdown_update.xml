@@ -9,7 +9,7 @@
 		<changelogurl>https://raw.githubusercontent.com/ThomasFinnern/plg_remote_markdown/refs/heads/master/changelog.xml</changelogurl>
 		<infourl title="RemoteMarkdown content plugin releases on github">https://github.com/ThomasFinnern/plg_remote_markdown/releases</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/ThomasFinnern/plg_remote_markdown/archive/refs/tags/v0.2.0.0.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/ThomasFinnern/plg_remote_markdown/releases/download/v0.2.0.0/plg_content_remotemarkdown.0.2.0.0_20250326.zip</downloadurl>
 		</downloads>
 		<tags>
 			<tag>stable</tag>

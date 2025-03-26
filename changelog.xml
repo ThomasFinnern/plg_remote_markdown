@@ -11,24 +11,30 @@
 	<changelog>
 		<element>plg_content_remotemarkdown</element>
 		<type>plugin</type>
+		<version>0.2.0.0</version>
+		<date>2025-03-25</date>
+		<fix>
+			<item>Fixed: offset to next '{remotemarkdown was into itself with double checks on same offset</item>
+		</fix>
+		<fix>
+			<item>Finding location of language files adjusted to information in manifest file</item>
+		</fix>
+		<note>
+			<item>First J5.x release</item>
+		</note>
+		<language>
+			<item>Shorter name</item>
+		</language>
+	</changelog>
+	<changelog>
+		<element>plg_content_remotemarkdown</element>
+		<type>plugin</type>
 		<version>0.1.6.6</version>
 		<date>2025-03-25</date>
 		<note>
 			<item>Initial Version with new name. Not released as such</item>
 			<item>Old name was remote_markdown. Version 0.1.4 (plg_remote_markdown-0.1.4.zip 2021-08-30)</item>
 			<item>Fixes and other changes to Version 0.1.4 see version 2.0.0</item>
-		</note>
-	</changelog>
-	<changelog>
-		<element>plg_content_remotemarkdown</element>
-		<type>plugin</type>
-		<version>0.2.0.0</version>
-		<date>2025-03-25</date>
-		<fix>
-			<item>Finding location of language files adjusted to information in manifest file</item>
-		</fix>
-		<note>
-			<item>First release</item>
 		</note>
 	</changelog>
 </changelogs>
