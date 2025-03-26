@@ -13,17 +13,11 @@
   <files>
     <folder plugin="remotemarkdown">services</folder>
     <folder>src</folder>
-    <fileName>remotemarkdown.xml</fileName>
   </files>
   <languages>
     <language tag="en-GB">language/en-GB/plg_content_remotemarkdown.ini</language>
     <language tag="en-GB">language/en-GB/plg_content_remotemarkdown.sys.ini</language>
   </languages>
-  <config>
-    <fields name="params">
-      <fieldset name="basic"/>
-    </fields>
-  </config>
   <changelogurl>https://raw.githubusercontent.com/ThomasFinnern/plg_remote_markdown/refs/heads/master/changelog.xml</changelogurl>
   <updateservers>
     <server type="extension" name="Lang4Dev Updates">https://raw.githubusercontent.com/ThomasFinnern/plg_remote_markdown/refs/heads/master/.update/remoteMarkdown_update.xml</server>
