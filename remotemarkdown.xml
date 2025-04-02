@@ -20,6 +20,6 @@
   </languages>
   <changelogurl>https://raw.githubusercontent.com/ThomasFinnern/plg_remote_markdown/refs/heads/master/changelog.xml</changelogurl>
   <updateservers>
-    <server type="extension" name="Lang4Dev Updates">https://raw.githubusercontent.com/ThomasFinnern/plg_remote_markdown/refs/heads/master/.update/remoteMarkdown_update.xml</server>
+    <server type="extension" name="Remote Markdown Updates">https://raw.githubusercontent.com/ThomasFinnern/plg_remote_markdown/refs/heads/master/.update/remoteMarkdown_update.xml</server>
   </updateservers>
 </extension>
