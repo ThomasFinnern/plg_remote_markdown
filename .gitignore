@@ -8,3 +8,7 @@
 .packages/
 .packages_zip/
 
+
+# org and temp files
+**/*.org.*
+**/*.tmp
