@@ -4,7 +4,7 @@ REM
 CLS
 
 REM Path for calling
-set ExePath=C:\Program Files\php82\
+set ExePath=e:\wamp64\bin\php\php8.4.5\
 REM ECHO ExePath: "%ExePath%"
 
 if exist "%ExePath%php.exe" (
