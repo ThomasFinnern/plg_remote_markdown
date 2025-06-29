@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="5.0" method="upgrade" type="plugin" group="content">
   <name>plg_content_remotemarkdown</name>
-  <version>0.2.0.0</version>
+  <version>0.2.0</version>
   <description>PLG_CONTENT_REMOTEMARKDOWN_DESCRIPTION</description>
   <author>Thomas Finnern</author>
-  <creationDate>2025.03.26</creationDate>
+  <creationDate>2025.06.29</creationDate>
   <copyright>Copyright (C) 2019 - 2024 Thomas Finnern All rights reserved.</copyright>
   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
   <authorEmail>plg_content_remotemarkdown@tomfinnern.de</authorEmail>
