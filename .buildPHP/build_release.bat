@@ -16,7 +16,6 @@ if exist "%ExePath%php.exe" (
     set ExePath=
 )
 
-REM "C:\Program Files\php82\php.exe" --version
 "%ExePath%php.exe" --version
 
 ECHO ----------------------------------------------
