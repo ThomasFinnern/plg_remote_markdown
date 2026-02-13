@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @package     Joomla.Plugin
- * @subpackage  Content.remotemarkdown
+ * @package         Joomla.Plugin
+ * @subpackage      Content.remotemarkdown
  * @author          Thomas Finnern <InsideTheMachine.de>
  * @copyright  (c)  2022-2025 Thomas Finnern
  * @license         GNU General Public License version 2 or later; see LICENSE.txt
@@ -46,10 +46,10 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
 
     // ToDo: description above function ....
     // this will be called whenever the onContentPrepare event is triggered
-    public function replaceByRemoteMarkdown(Event $event) : void
+    public function replaceByRemoteMarkdown(Event $event): void
     {
         /* This function processes the text of an article being presented on the site.
-         * It replaces any text of the form "{remotemarkdown:https://...}" where 
+         * It replaces any text of the form "{remotemarkdown:https://...}" where
          * the string between : and } will be used as external url pointing to a
          * markdown file
          *
@@ -64,21 +64,20 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
             return;
         }
 
+        // ToDo: check manual.joomla.org  -> plugins and change accordingly
         // use this format to get the arguments for both Joomla 4 and Joomla 5
         // In Joomla 4 a generic Event is passed
         // In Joomla 5 a concrete ContentPrepareEvent is passed
         [$context, $article, $params, $page] = array_values($event->getArguments());
-
-//        // ToDo: use following (better check manual.joomla.org -> plugins
-//        $context = $event->getArgument('context');
-//        $article = $event->getArgument('article');
-//        $params  = $event->getArgument('params'); // spelling ?
+        //// ToDo: use following (better check manual.joomla.org -> plugins
+        //$context = $event->getArgument('context');
+        //$article = $event->getArgument('article');
+        //$params  = $event->getArgument('params'); // spelling ?
 
         // check for allowed content type
         if ($context !== "com_content.article"
             && $context !== "com_content.featured"
-            && $context !== "com_content.category")
-        {
+            && $context !== "com_content.category") {
             return;
         }
 
@@ -92,56 +91,52 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
         // find opening curly brackets ...
         $offset = 0;
         while (($start = strpos($text, "{", $offset)) !== false) {
-
-			$offset = $start + 1;
+            $offset = $start + 1;
 
             // find the corresponding closing bracket and extract the "userText"
             if ($end = strpos($text, "}", $start)) {
-
-                $userText = substr($text, $start+1, $end - $start - 1);
+                $userText = substr($text, $start + 1, $end - $start - 1);
 
                 //--- Matches marker ----------------------------
 
                 if (str_starts_with(strtolower($userText), self::MARKER)) {
-
                     //--- Extract url and parameter) ----------------------
 
-                    $userData = substr ($userText, strlen (self::MARKER));
-                    [$fileUrl, $userParams] = $this->extractUrlAndParameter ($userData);
+                    $userData = substr($userText, strlen(self::MARKER));
+                    [$fileUrl, $userParams] = $this->extractUrlAndParameter($userData);
 
-					// Remove all illegal characters from a url
-	                $urlSanitize = filter_var($fileUrl, FILTER_SANITIZE_URL);
+                    // Remove all illegal characters from a url
+                    $urlSanitize = filter_var($fileUrl, FILTER_SANITIZE_URL);
 
 
                     //--- Remote file  --------------------------------------------
 
-	                // Validate url
+                    // Validate url
                     if (filter_var($urlSanitize, FILTER_VALIDATE_URL)) {
-		                $mdText = file_get_contents($urlSanitize);
-	                } else {
-						$mdText = '';
-	                }
+                        $mdText = file_get_contents($urlSanitize);
+                    } else {
+                        $mdText = '';
+                    }
 
                     //--- convert to html ----------------------
 
                     if (!empty ($mdText)) {
-		                // ? prepared $userParams ?
+                        // ? prepared $userParams ?
 
-		                // ToDo: test $parseDown = new parsedown(true);
-		                $parseDown = new parsedown();
+                        // ToDo: test $parseDown = new parsedown(true);
+                        $parseDown = new parsedown();
 
-		                //Test output: $html = $parseDown->text('**Hello _Parsedown_**');
-		                $html = $parseDown->text($mdText);
-	                } else {
-
-		                $html = '';
-	                }
+                        //Test output: $html = $parseDown->text('**Hello _Parsedown_**');
+                        $html = $parseDown->text($mdText);
+                    } else {
+                        $html = '';
+                    }
 
                     //--- insert replacement -----------------------------------------------
 
                     if (empty ($html)) {
-						$html = '{start of remotemarkdown found but file: "' . $fileUrl . '" or data not found. '
-							. '\n Sanitized URL: "' . $urlSanitize . '" }';
+                        $html = '{start of remotemarkdown found but file: "' . $fileUrl . '" or data not found. '
+                            . '\n Sanitized URL: "' . $urlSanitize . '" }';
                     }
 //					else
 //					{
@@ -151,7 +146,7 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
                     $text = substr_replace($text, $html, $start, $end - $start + 1);
 
                     $offset = $start + strlen($html);
-					// $test = substr($text, $offset);
+                    // $test = substr($text, $offset);
                 }
             }
 
@@ -163,17 +158,16 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
         }
 
         /**
-        // ToDo: show link as option
-        // $outTxt .= '<br>$link: "' . $link . '"';
-        
-        // ToDo: show user parameter as option
-        // ToDo: Tell user parameter
-        foreach ($userParams as $key => $value)
-        {
-            $outTxt .= '<br>...$userParameter: "' . $key . '": ' . $value . '"';
-        }
-        /**/
-
+         * // ToDo: show link as option
+         * // $outTxt .= '<br>$link: "' . $link . '"';
+         *
+         * // ToDo: show user parameter as option
+         * // ToDo: Tell user parameter
+         * foreach ($userParams as $key => $value)
+         * {
+         * $outTxt .= '<br>...$userParameter: "' . $key . '": ' . $value . '"';
+        * }
+         * /**/
 
 
         /**
@@ -191,7 +185,7 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
 
     private function extractUrlAndParameter($userData)
     {
-        $fileUrl = '';
+        $fileUrl    = '';
         $userParams = [];
 
         //--- optional parameters --------------------------------------------
@@ -206,17 +200,16 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
         $separator = '>';
 
         // find end separator
-        $pos = strpos ($userData, self::PARA_SEPARATOR);
+        $pos = strpos($userData, self::PARA_SEPARATOR);
         if ($pos) {
             // Link is behind separator
-            $fileUrl = substr ($userData, $pos +1);
-            $userParameters = substr ($userData, 0, $pos -1);
+            $fileUrl        = substr($userData, $pos + 1);
+            $userParameters = substr($userData, 0, $pos - 1);
 
             // $outTxt = '<br>$userParameters: "' . $userParameters . '"';
 
             $userParams = $this->extractParameters($userParameters);
         } else {
-
             $fileUrl = $userData;
         }
 
@@ -228,8 +221,8 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
      * User parameter prepared for extraction but not for use
      *
      *
-     * @param string $userParameters
-     * @param array $userParams
+     * @param   string  $userParameters
+     * @param   array   $userParams
      *
      * @return array
      */
@@ -238,7 +231,6 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
         $userParams = [];
 
         foreach (explode(';', $userParameters) as $userParameter) {
-
             $param = array_map('trim', explode(";", $userParameter));
 
             if (!count($param) > 0) {
