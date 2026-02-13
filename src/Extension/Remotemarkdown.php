@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package     Joomla.Plugin
  * @subpackage  Content.remotemarkdown
@@ -29,7 +30,12 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
     //  "#" and "%" are reserved characters that must be used in a specific context
     protected const PARA_SEPARATOR = '>';
 
-
+    /**
+     *
+     * @return string[]
+     *
+     * @since version
+     */
     public static function getSubscribedEvents(): array
     {
         return [
@@ -38,6 +44,7 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
         ];
     }
 
+    // ToDo: description above function ....
     // this will be called whenever the onContentPrepare event is triggered
     public function replaceByRemoteMarkdown(Event $event) : void
     {
@@ -49,6 +56,8 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
          *
          */
 
+        // ToDo: try
+
         // The line below restricts the functionality to the site (ie not on api)
         // You may not want this, so you need to consider this in your own plugins
         if (!$this->getApplication()->isClient('site')) {
@@ -59,16 +68,22 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
         // In Joomla 4 a generic Event is passed
         // In Joomla 5 a concrete ContentPrepareEvent is passed
         [$context, $article, $params, $page] = array_values($event->getArguments());
-//        if ($context !== "com_content.article" && $context !== "com_content.featured")
+
+//        // ToDo: use following (better check manual.joomla.org -> plugins
+//        $context = $event->getArgument('context');
+//        $article = $event->getArgument('article');
+//        $params  = $event->getArgument('params'); // spelling ?
+
+        // check for allowed content type
         if ($context !== "com_content.article"
             && $context !== "com_content.featured"
-            && $context !== "com_content.category"
-        )
+            && $context !== "com_content.category")
         {
             return;
         }
-        if ($article->text == null)
-        {
+
+        // Nothing to change
+        if (empty($article) || empty($article->text)) {
             return;
         }
 
@@ -101,8 +116,7 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
                     //--- Remote file  --------------------------------------------
 
 	                // Validate url
-	                if (filter_var($urlSanitize, FILTER_VALIDATE_URL))
-	                {
+                    if (filter_var($urlSanitize, FILTER_VALIDATE_URL)) {
 		                $mdText = file_get_contents($urlSanitize);
 	                } else {
 						$mdText = '';
@@ -110,8 +124,7 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
 
                     //--- convert to html ----------------------
 
-	                if ( ! empty ($mdText))
-	                {
+                    if (!empty ($mdText)) {
 		                // ? prepared $userParams ?
 
 		                // ToDo: test $parseDown = new parsedown(true);
@@ -126,8 +139,7 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
 
                     //--- insert replacement -----------------------------------------------
 
-                    if (empty ($html))
-					{
+                    if (empty ($html)) {
 						$html = '{start of remotemarkdown found but file: "' . $fileUrl . '" or data not found. '
 							. '\n Sanitized URL: "' . $urlSanitize . '" }';
                     }
@@ -139,7 +151,6 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
                     $text = substr_replace($text, $html, $start, $end - $start + 1);
 
                     $offset = $start + strlen($html);
-
 					// $test = substr($text, $offset);
                 }
             }
@@ -151,17 +162,17 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
 //			}
         }
 
-/**
+        /**
         // ToDo: show link as option
         // $outTxt .= '<br>$link: "' . $link . '"';
-
+        
         // ToDo: show user parameter as option
         // ToDo: Tell user parameter
         foreach ($userParams as $key => $value)
         {
             $outTxt .= '<br>...$userParameter: "' . $key . '": ' . $value . '"';
         }
-/**/
+        /**/
 
 
 
@@ -196,8 +207,7 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
 
         // find end separator
         $pos = strpos ($userData, self::PARA_SEPARATOR);
-        if ($pos)
-        {
+        if ($pos) {
             // Link is behind separator
             $fileUrl = substr ($userData, $pos +1);
             $userParameters = substr ($userData, 0, $pos -1);
@@ -220,6 +230,7 @@ class RemoteMarkdown extends CMSPlugin implements SubscriberInterface
      *
      * @param string $userParameters
      * @param array $userParams
+     *
      * @return array
      */
     public function extractParameters(string $userParameters): array

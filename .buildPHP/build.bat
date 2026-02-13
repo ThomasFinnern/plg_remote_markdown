@@ -1,6 +1,7 @@
 @ECHO OFF
-REM build_step.bat
-REM like build_develop but does increase minor 'build' number 
+REM build.bat
+REM options file can be selected 
+REM d:develop, s:step, f:fix, r:release, m:major
 CLS
 
 REM Path for calling
@@ -47,11 +48,10 @@ ECHO ----------------------------------------------
 ECHO.
 
 pushd  ..\..\buildExtension\src
-REM dir /one /b *.tsk
 ECHO Path: %cd% 
 
-echo --- "%ExePath%php.exe" buildExtensionCmd.php -f ../../plg_remoteMarkdown/.buildPHP/build.tsk %1 %OptionFile%
-"%ExePath%php.exe" buildExtensionCmd.php -f ../../plg_remoteMarkdown/.buildPHP/build.tsk %1 %OptionFile%
+echo --- "%ExePath%php.exe" buildExtensionCmd.php -f ../../plg_remoteMarkdown/.buildPHP/build.tsk %OptionFile%
+"%ExePath%php.exe" buildExtensionCmd.php -f ../../plg_remoteMarkdown/.buildPHP/build.tsk %OptionFile%
 popd
 
 GOTO :EOF

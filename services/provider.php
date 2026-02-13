@@ -9,13 +9,13 @@
 
 \defined('_JEXEC') or die;
 
+use Finnern\Plugin\Content\RemoteMarkdown\Extension\RemoteMarkdown;
 use Joomla\CMS\Extension\PluginInterface;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 use Joomla\Event\DispatcherInterface;
-use Finnern\Plugin\Content\RemoteMarkdown\Extension\RemoteMarkdown;
 
 return new class () implements ServiceProviderInterface {
     /**
@@ -32,11 +32,9 @@ return new class () implements ServiceProviderInterface {
         $container->set(
             PluginInterface::class,
             function (Container $container) {
-
                 $plugin     = new RemoteMarkdown(
                     $container->get(DispatcherInterface::class),
-                    (array) PluginHelper::getPlugin('content', 'remotemarkdown')
-                );
+                    (array)PluginHelper::getPlugin('content', 'remotemarkdown'));
                 $plugin->setApplication(Factory::getApplication());
 
                 return $plugin;

@@ -4,5 +4,5 @@ task:buildExtension
 /srcRoot="../../plg_remoteMarkdown"
    // /isNoRecursion=true
 /buildDir="../../plg_remoteMarkdown/.packages"
-/name=plg_content_remotemarkdown
-/extension=plg_remoteMarkdown
+/name=plg_remotemarkdown
+/extension=plg_content_remotemarkdown
