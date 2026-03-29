@@ -1,5 +1,6 @@
 @ECHO OFF
-REM build_release.bat
+REM exchangeAll_actCopyrightYearLines.bat
+REM calling over doFileTasksCmd.php
 REM
 CLS
 
@@ -16,17 +17,31 @@ if exist "%ExePath%php.exe" (
     set ExePath=
 )
 
+REM "C:\Program Files\php82\php.exe" --version
 "%ExePath%php.exe" --version
+ECHO.
+
+ECHO ----------------------------------------------
+ECHO.
+
+REM more options 
+
+set OptionFile=
+
+REM if %1A==-dA (
+REM 	set OptionFile=-o options_version_tsk\build_develop.opt
+REM )
+
 
 ECHO ----------------------------------------------
 ECHO.
 
 pushd  ..\..\buildExtension\src
-REM dir /one /b *.tsk
 ECHO Path: %cd% 
 
-echo --- "%ExePath%php.exe" buildExtensionCmd.php -f ../../remoteMarkdown/.buildPHP/build_release.tsk %1
-"%ExePath%php.exe" buildExtensionCmd.php -f ../../remoteMarkdown/.buildPHP/build_release.tsk %1
+REM echo.
+echo --- "%ExePath%php.exe" doFileTasksCmd.php -f "../../plg_remoteMarkdown\.cleanPHP\exchangeAll_actCopyrightYearLines.tsk" %1
+"%ExePath%php.exe" doFileTasksCmd.php -f "../../plg_remoteMarkdown\.cleanPHP\exchangeAll_actCopyrightYearLines.tsk" %1
 popd
 
 goto :EOF

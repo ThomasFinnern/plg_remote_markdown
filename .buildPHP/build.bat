@@ -44,6 +44,7 @@ if %1A==-mA (
 	set OptionFile=-o options_version_tsk\build_major.opt
 )
 
+
 ECHO ----------------------------------------------
 ECHO.
 

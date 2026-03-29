@@ -1,9 +1,0 @@
-task:buildExtension
-/type=module
-/srcRoot="../../remoteMarkdown"
-	// /isNoRecursion=true
-/buildDir="../../remoteMarkdown/.packages"
-/name=plg_content_remotemarkdown
-/extension=remoteMarkdown
-	//    release will increase minor and reset revision and build counter
-/isBuildRelease=true

@@ -1,7 +1,10 @@
 @ECHO OFF
-REM build_fix.bat
+REM encloseAll_jexec_Lines.bat
 REM
 CLS
+
+ECHO PHP doFileTasksCmd.php encloseAll_jexec_Lines.tsk
+ECHO.
 
 REM Path for calling
 set ExePath=e:\wamp64\bin\php\php8.4.5\
@@ -16,20 +19,28 @@ if exist "%ExePath%php.exe" (
     set ExePath=
 )
 
+REM "%ExePath% --version
 "%ExePath%php.exe" --version
 
 ECHO ----------------------------------------------
 ECHO.
 
+REM more options 
+
+set OptionFile=
+
+ECHO ----------------------------------------------
+ECHO.
+
 pushd  ..\..\buildExtension\src
-REM dir /one /b *.tsk
 ECHO Path: %cd% 
 
-echo --- "%ExePath%php.exe" buildExtensionCmd.php -f ../../remoteMarkdown/.buildPHP/build_fix.tsk %1
-"%ExePath%php.exe" buildExtensionCmd.php -f ../../remoteMarkdown/.buildPHP/build_fix.tsk %1
+echo --- "%ExePath%php.exe" doFileTasksCmd.php -f ../../plg_remoteMarkdown/.cleanPHP/encloseAll_jexec_Lines.tsk %1
+"%ExePath%php.exe" doFileTasksCmd.php -f ../../plg_remoteMarkdown/.cleanPHP/encloseAll_jexec_Lines.tsk %1
+
 popd
 
-GOTO :EOF
+goto :EOF
 
 REM ------------------------------------------
 REM Adds given argument to the already known command arguments
@@ -38,4 +49,3 @@ REM Adds given argument to the already known command arguments
     Set CmdArgs=%CmdArgs% %NextArg%
     ECHO  '%NextArg%'
 GOTO :EOF
-

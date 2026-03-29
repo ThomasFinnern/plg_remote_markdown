@@ -1,6 +1,5 @@
 task:buildExtension
 /type=module
-   //srcRoot="../../plg_remoteMarkdown"
 /srcRoot="../../plg_remoteMarkdown"
    // /isNoRecursion=true
 /buildDir="../../plg_remoteMarkdown/.packages"

@@ -1,0 +1,27 @@
+task:createNamespace
+	// /callerProjectId=RSG2
+/srcRoot="./../../plg_remoteMarkdown"
+	// /isNoRecursion=true
+/includeExt="php"
+	// /excludeFolderList=excluded
+	// /excludeFolderList=postponed
+/isLogDev=true
+/isLogOnly=true
+
+//--- namespace Mycompany\Component\Example\Site\Model;
+//--- Rsgallery2\Component\Rsgallery2\Site\Model;
+/company=Rsgallery2
+/extensionType=component
+/extensionName=Rsgallery2
+	// /rootPath=e:\wamp64\www\joomla5x
+/rootPath=d:\Entwickl\2025\_gitHub\plg_remoteMarkdown\
+
+/isCompare=true
+	// /isForce=true
+
+/excludeFolderList=modules
+/excludeFolderList=plugins
+/excludeFolderList=media
+/excludeFolderList=.git
+/excludeFolderList=.idea
+

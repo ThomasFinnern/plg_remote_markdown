@@ -1,14 +1,17 @@
-
-
 //.buildPHP/
 .buildPHP/*.log
 .buildPHP/*.*.log
 .buildPHP/Translations/.idea/
 
+.cleanPHP/*.log
+.cleanPHP/*.*.log
+
 .packages/
 .packages_zip/
-
 
 # org and temp files
 **/*.org.*
 **/*.tmp
+
+.idea
+

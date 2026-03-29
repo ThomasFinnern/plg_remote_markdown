@@ -1,7 +1,10 @@
 @ECHO OFF
-REM build_develop.bat
+REM createNamespace_log.bat
 REM
 CLS
+
+ECHO PHP doFileTasksCmd.php createNamespace_log.tsk
+ECHO.
 
 REM Path for calling
 set ExePath=e:\wamp64\bin\php\php8.4.5\
@@ -16,17 +19,25 @@ if exist "%ExePath%php.exe" (
     set ExePath=
 )
 
+REM "%ExePath% --version
 "%ExePath%php.exe" --version
 
 ECHO ----------------------------------------------
 ECHO.
 
+REM more options 
+
+set OptionFile=
+
+ECHO ----------------------------------------------
+ECHO.
+
 pushd  ..\..\buildExtension\src
-REM dir /one /b *.tsk
 ECHO Path: %cd% 
 
-echo --- "%ExePath%php.exe" buildExtensionCmd.php -f ../../remoteMarkdown/.buildPHP/build_develop.tsk %1
-"%ExePath%php.exe" buildExtensionCmd.php -f ../../remoteMarkdown/.buildPHP/build_develop.tsk %1
+echo --- "%ExePath%php.exe" doFileTasksCmd.php -f ../../plg_remoteMarkdown/.cleanPHP/createNamespace_log.tsk %1
+"%ExePath%php.exe" doFileTasksCmd.php -f ../../plg_remoteMarkdown/.cleanPHP/createNamespace_log.tsk %1
+
 popd
 
 goto :EOF

@@ -1,0 +1,9 @@
+task:encloseAll_jexec_Lines
+	// /callerProjectId=RSG2
+/srcRoot="./../../plg_remoteMarkdown"
+	// /isNoRecursion=true
+/includeExt="php"
+	// /excludeFolderList=excluded
+	// /excludeFolderList=postponed
+	// /isLogOnly=true
+/isLogDev=true
