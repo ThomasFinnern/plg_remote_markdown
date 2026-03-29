@@ -3,7 +3,7 @@
  * @package     Joomla.Plugin
  * @subpackage  Content.remotemarkdown
  * @author          Thomas Finnern <InsideTheMachine.de>
- * @copyright  (c)  2022-2025 Thomas Finnern
+ * @copyright  (c) 2022-2026 RSGallery2 Team
  * @license         GNU General Public License version 2 or later; see LICENSE.txt
  */
 
