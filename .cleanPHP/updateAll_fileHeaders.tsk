@@ -1,0 +1,37 @@
+task:updateAll_fileHeaders
+/callerProjectId=RSG2
+/srcRoot="./../../plg_remoteMarkdown"
+/includeExt="php ts"
+
+// --- Force standard value -------------------
+   // /isForceStdPackage=true
+   // /isForceStdSubpackage=true
+   // /isForceStdActCopyrightDateDate=true
+   // /isForceStdSinceCopyrightDate=true
+   // /isForceSinceCopyrightDateToToday=true
+   // /isForceStdLicense=true
+   // /isForceStdAuthor=true
+   // /isForceStdPostCopyrightAuthor=true   
+   
+// --- Force value -----------------
+/isForcePackage=true
+/isForceSubpackage=true
+   // /isForceActCopyrightDate=true
+   // /isForceSinceCopyrightDate=true
+   // /isForceSinceCopyrightDateToToday=true
+   // /isForceLicense=true
+/isForceAuthor=true
+/isForcePostCopyrightAuthor=true *
+// /isForceLink=true ?
+
+// --- Value to be used on force ------
+/valueForcePackage="remoteMarkdown"
+/valueForceSubpackage="remoteMarkdown.plugin"
+   // /valueForceActCopyrightDate="2024"
+   // /valueForceSinceCopyrightDate="2016"
+   // /valueForceCopyrightToday=$copyrightDate . "-" . $copyrightDate . " RSGallery2 Team"
+/valueForceLicense="GNU General Public License version 2 or later"
+/valueForceAuthor="Thomas Finnern <InsideTheMachine.de>"
+/valueForcePostCopyrightAuthor="Thomas Finnern"
+//
+// 

@@ -29,14 +29,18 @@ REM more options
 
 set OptionFile=
 
+REM if %1A==-dA (
+REM 	set OptionFile=-o options_version_tsk\build_develop.opt
+REM )
+
 ECHO ----------------------------------------------
 ECHO.
 
 pushd  ..\..\buildExtension\src
 ECHO Path: %cd% 
 
-echo --- "%ExePath%php.exe" doFileTasksCmd.php -f ../../plg_remoteMarkdown/.cleanPHP/createNamespace_log.tsk %1
-"%ExePath%php.exe" doFileTasksCmd.php -f ../../plg_remoteMarkdown/.cleanPHP/createNamespace_log.tsk %1
+echo --- "%ExePath%php.exe" doFileTasksCmd.php -f ../../plg_remoteMarkdown/.cleanPHP/createNamespace_log.tsk %OptionFile%
+"%ExePath%php.exe" doFileTasksCmd.php -f ../../plg_remoteMarkdown/.cleanPHP/createNamespace_log.tsk %OptionFile%
 
 popd
 
