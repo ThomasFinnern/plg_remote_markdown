@@ -30,7 +30,7 @@ task:updateAll_fileHeaders
    // /valueForceActCopyrightDate="2024"
    // /valueForceSinceCopyrightDate="2016"
    // /valueForceCopyrightToday=$copyrightDate . "-" . $copyrightDate . " RSGallery2 Team"
-/valueForceLicense="GNU General Public License version 2 or later"
+   // /valueForceLicense="GNU General Public License version 2 or later"
 /valueForceAuthor="Thomas Finnern <InsideTheMachine.de>"
 /valueForcePostCopyrightAuthor="Thomas Finnern"
 //
