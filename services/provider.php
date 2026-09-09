@@ -1,10 +1,11 @@
 <?php
+
 /**
- * @package     Joomla.Plugin
- * @subpackage  Content.remotemarkdown
- * @author          Thomas Finnern <InsideTheMachine.de>
+ * @package        remoteMarkdown
+ * @subpackage     remoteMarkdown.plugin
+ * @author         Thomas Finnern <InsideTheMachine.de>
  * @copyright  (c) 2022-2026 RSGallery2 Team
- * @license         GNU General Public License version 2 or later; see LICENSE.txt
+ * @license        GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 \defined('_JEXEC') or die;
